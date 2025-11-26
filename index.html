@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GitHub User Finder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>GitHub User Finder</h1>
+
+    <form id="searchForm" class="search-row" autocomplete="off">
+      <input id="usernameInput" type="text" placeholder="Enter GitHub username (e.g. torvalds)" required />
+      <button type="submit">Search</button>
+      <button type="button" id="refreshBtn" title="Refresh last search">Refresh</button>
+    </form>
+
+    <div id="status" class="status"></div>
+
+    <section id="profile" class="card hidden">
+      <div class="profile-left">
+        <img id="avatar" alt="avatar" src="" />
+      </div>
+      <div class="profile-right">
+        <h2 id="name"></h2>
+        <p id="bio" class="muted"></p>
+        <p class="meta">
+          <span id="followers"></span> followers ·
+          <span id="following"></span> following ·
+          <span id="reposCount"></span> public repos
+        </p>
+        <p>
+          <a id="profileLink" href="#" target="_blank" rel="noopener">Open on GitHub</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="repos" class="card hidden">
+      <h3>Repositories</h3>
+      <ul id="reposList" class="repos-list"></ul>
+    </section>
+
+    <footer class="footer muted">
+      Built using <code>fetch</code>, async/await, and the GitHub REST API.
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
